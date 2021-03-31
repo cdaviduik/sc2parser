@@ -1,0 +1,1 @@
+REPLAY_EXT = 'SC2Replay'

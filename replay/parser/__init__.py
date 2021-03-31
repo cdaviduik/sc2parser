@@ -1,5 +1,5 @@
-from parser.mpyq_parser import parse_replay as parse_replay_mpyq, find_player_mmr_with_id
-from parser.sc2reader_parser import parse_replay as parse_replay_sc2reader
+from replay.parser.mpyq_parser import parse_replay as parse_replay_mpyq, find_player_mmr_with_id
+from replay.parser.sc2reader_parser import parse_replay as parse_replay_sc2reader
 
 
 def parse_replay(path):
@@ -50,7 +50,7 @@ class Player:
         return self._player.name
 
 
-
+# Example of parsed mpyq data
 data = {u'GameVersion': u'5.0.6.83830', u'DataVersion': u'B4745D6A4F982A3143C183D8ACB6C3E3', u'BaseBuild': u'Base83830',
         u'Title': u'Deathaura LE', u'DataBuild': u'83830', u'Players': [
         {u'AssignedRace': u'Zerg', u'PlayerID': 1, u'MMR': 2852, u'SelectedRace': u'Zerg', u'Result': u'Win',

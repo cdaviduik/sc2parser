@@ -1,38 +1,16 @@
-import os
 import sys
 
-sys.path.append('./libs')
-
-from file_io import copy_file
-from parser import parse_replay
-from filename_builder import build_filename
-
-
-REPLAY_EXT = 'SC2Replay'
+from replay import find_and_parse
 
 
 def main():
-    path = get_path()
-
-    replay = parse_replay(path)
-
-    new_filename = build_filename(replay.start_time, replay.map_name, replay.players)
-
-    print "\nnew_filename:"
-    print new_filename
-
-    copy_file(path, new_filename)
-
-    print "\n*** ALL DONE ***"
-    print "hopefully it worked"
+    find_and_parse()
 
 
-def get_path():
-    path = sys.argv[1]
-    fullpath = os.path.abspath(path)
-    print "\nfullpath:", fullpath
-    return fullpath
+def add_libs_to_sys_path():
+    sys.path.append('./libs')
 
 
 if __name__ == '__main__':
+    add_libs_to_sys_path()
     main()

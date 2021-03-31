@@ -3,12 +3,16 @@ import sc2reader
 TYPE_1V1 = '1v1'
 
 
+class SC2ReaderParsingError(Exception):
+    pass
+
+
 def parse_replay(path):
     sc2 = sc2reader.SC2Reader()
     replay = sc2.load_replay(path)
 
     if replay.type != TYPE_1V1:
-        raise "Unable to parse replay. Must be a 1v1 match."
+        raise SC2ReaderParsingError("Unable to parse replay. Must be a 1v1 match.")
 
     print "\nmap:"
     print replay.map_name
@@ -21,7 +25,9 @@ def parse_replay(path):
     print [(p.name, p.pid) for p in players]
 
     if len(players) != 2:
-        raise "Unable to parse replay. Must contain exactly 2 players."
+        raise SC2ReaderParsingError("Unable to parse replay. Must contain exactly 2 players.")
 
     return replay
+
+
 

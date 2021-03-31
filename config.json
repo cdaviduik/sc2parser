@@ -1,0 +1,5 @@
+{
+  "replays_path": "./replay_files",
+  "skip_existing": false,
+  "own_accounts": ["Ares", "FutureNights"]
+}
