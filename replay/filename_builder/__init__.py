@@ -1,3 +1,6 @@
+import time
+import datetime
+
 from replay.common import REPLAY_EXT
 from replay.common.logger import log
 
@@ -6,8 +9,10 @@ def build_filename(start_time, map_name, players, own_accounts=None):
     player_infos = filter(None, [build_player_info(player, own_accounts=own_accounts) for player in players])
     log('player infos', player_infos)
 
+    formatted_start_time = time.mktime(start_time.timetuple())
+
     filename_data = {
-        'start_time': start_time,
+        'start_time': formatted_start_time,
         'map_name': map_name,
         'ext': REPLAY_EXT,
         'player_infos': ' '.join(player_infos)

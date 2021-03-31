@@ -11,3 +11,8 @@ Having said that, the parsed filename is deterministic, so executing it multiple
 
 ### Own Accounts
 By specifying account names in `own_accounts` of `config.json` the mmr will not be included for those players in the parsed filename.
+
+
+#### TODO
+- gitignore config.json
+- support mac vs win slashes
