@@ -1,5 +1,6 @@
 import time
 import datetime
+import unicodedata
 
 from replay.common import REPLAY_EXT
 from replay.common.logger import log
@@ -23,8 +24,10 @@ def build_filename(start_time, map_name, players, own_accounts=None):
 def build_player_info(player, own_accounts=None):
     own_accounts = own_accounts or []
     log('own_accounts', own_accounts)
-    if player.name in own_accounts:
-        log('own player', player.name)
-        return player.name
+    player_name = unicodedata.normalize('NFKD', player.name).encode('ascii', 'ignore')
 
-    return '{} {}'.format(player.name, player.mmr)
+    if player_name in own_accounts:
+        log('own player', player_name)
+        return player_name
+
+    return '{} {}'.format(player_name, player.mmr)

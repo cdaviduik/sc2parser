@@ -1,17 +1,11 @@
 import sys
-import time
 
 
 def main():
     from replay import find_and_parse
 
     print '\nRunning parser'
-    while True:
-        print '\nChecking for replays'
-        find_and_parse()
-
-        # time.sleep(1)
-        return
+    find_and_parse()
 
 
 def add_libs_to_sys_path():

@@ -10,9 +10,9 @@ class ReplayFinderError(Exception):
 def find_replays(path):
     search_path = '{}/*.{}'.format(path, REPLAY_EXT)
 
-    print "\nfiles in glob:"
+    print "\nsearching for replays in path"
     replay_paths = glob.glob(search_path)
-    print replay_paths
+    print "found {} replays".format(len(replay_paths))
 
     if len(replay_paths) == 0:
         raise ReplayFinderError('Unable to find any replays in path {}'.format(search_path))

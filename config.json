@@ -1,5 +1,5 @@
 {
-  "replays_path": "C:/Users/Gaming/Projects/sc2parser/replay_files",
+  "replays_path": "C:\\Users\\Gaming\\Documents\\StarCraft II\\Accounts\\12345678\\1-S2-1-1234567\\Replays\\Multiplayer",
   "skip_existing": true,
-  "own_accounts": ["Ares", "FutureNights", "PastDays"]
+  "own_accounts": ["FutureNights", "PastDays"]
 }
