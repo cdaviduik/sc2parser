@@ -6,6 +6,8 @@ Starcraft 2 replay parser written in python using sc2reader and mpyq which creat
 
 Download [Python 2.7](https://www.python.org/download/releases/2.7/) (probably [this one](https://www.python.org/ftp/python/2.7/python-2.7.amd64.msi)). This won't work with any Python 3 versions.
 
+Download this project somewhere on your computer. You can do this by clicking the green "Code" button, then "Download ZIP" and extracting it to a folder on your computer.
+
 Add `replay_path` to `config.json`, however you will need to ensure all backslashes are escaped by adding a second `\` next to them, it will look something like `C:\\Users\\MyUser\\Documents\\StarCraft II\\Accounts\\12345678\\1-S2-1-1110011\\Replays\\Multiplayer`, then execute the `main.py` script.
 
 It will look for all the SC2Replay files in the specified directory (but not nested directories), parse them, and copy a renamed version into a nested `parsed` directory inside your `replay_path`.
