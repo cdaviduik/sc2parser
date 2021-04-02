@@ -8,9 +8,9 @@ from replay.parser.sc2reader_parser import SC2ReaderParsingError
 from replay.filename_builder import build_filename
 
 
-def process_replay(path, parsed_path, skip_existing=True, own_accounts=None, path_separator=None):
+def process_replay(original_path, replay_path, parsed_path, skip_existing=True, own_accounts=None, path_separator=None):
     try:
-        replay = parse_replay(path)
+        replay = parse_replay(replay_path)
     # TODO: replace with base ParsingError
     except SC2ReaderParsingError as e:
         print "\nUnable to parse replay:"
@@ -29,7 +29,7 @@ def process_replay(path, parsed_path, skip_existing=True, own_accounts=None, pat
     print "\nnew_filename:"
     print new_filename
 
-    copy_file(path, new_filename, parsed_path, skip_existing=skip_existing, path_separator=path_separator)
+    copy_file(original_path, replay_path, new_filename, parsed_path, skip_existing=skip_existing, path_separator=path_separator)
 
 
 def build_parsed_path(replays_path, parsed_path=None):

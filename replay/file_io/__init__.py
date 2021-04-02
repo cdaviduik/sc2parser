@@ -4,13 +4,20 @@ import shutil
 from replay.common.logger import log
 
 
-def copy_file(src_filepath, dst_filename, parsed_path, skip_existing=True, path_separator="\\"):
+def copy_file(root_src_path, src_filepath, dst_filename, root_dst_path, skip_existing=True, path_separator="\\"):
+    log('original_path', root_src_path)
+
     print "\nsrc_filepath:"
     print src_filepath
 
     filepath, _, old_filename = src_filepath.rpartition(path_separator)
     print "\nfilepath:"
     print filepath
+
+    _, _, relative_path = filepath.rpartition(root_src_path)
+    log('relative_path', relative_path)
+
+    parsed_path = root_dst_path + relative_path
 
     print "\nparsed_path:"
     print parsed_path

@@ -31,9 +31,7 @@ def _execute(replay_config):
     replay_paths = find_replays(path, parsed_path)
     for replay_path in replay_paths:
         print "\n*** Processing replay: {}".format(replay_path)
-
-
-        process_replay(replay_path, parsed_path, skip_existing=replay_config.skip_existing, own_accounts=replay_config.own_accounts,
+        process_replay(path, replay_path, parsed_path, skip_existing=replay_config.skip_existing, own_accounts=replay_config.own_accounts,
                        path_separator=replay_config.path_separator)
 
     print "\n*** ALL DONE ***"
