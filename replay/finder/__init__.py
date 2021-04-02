@@ -1,21 +1,29 @@
+import os
 import glob
 
-from replay.common import REPLAY_EXT
+from replay.common import REPLAY_EXT, DEFAULT_PARSED_PATH_NAME
+from replay.common.logger import log
 
 
 class ReplayFinderError(Exception):
     pass
 
 
-def find_replays(path):
-    search_path = '{}/*.{}'.format(path, REPLAY_EXT)
-
+def find_replays(path, parsed_path):
     print "\nsearching for replays in path"
-    replay_paths = glob.glob(search_path)
-    print "found {} replays".format(len(replay_paths))
+    for dir_path, dir_names, file_names in os.walk(path):
+        log('dir path', dir_path)
 
-    if len(replay_paths) == 0:
-        raise ReplayFinderError('Unable to find any replays in path {}'.format(search_path))
+        if _should_skip_path(dir_path, parsed_path):
+            print "Skipping parsed directory"
+            continue
+        for filename in glob.iglob(_search_path(dir_path)):
+            yield filename
 
-    return replay_paths
 
+def _search_path(path):
+    return '{}/*.{}'.format(path, REPLAY_EXT)
+
+
+def _should_skip_path(path, parsed_path):
+    return path.endswith(DEFAULT_PARSED_PATH_NAME) or path.endswith(parsed_path)

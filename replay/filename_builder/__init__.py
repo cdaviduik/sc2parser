@@ -1,5 +1,4 @@
 import time
-import datetime
 import unicodedata
 
 from replay.common import REPLAY_EXT

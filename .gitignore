@@ -130,4 +130,5 @@ dmypy.json
 
 # project
 replay_files/*
+config.json
 .idea/*

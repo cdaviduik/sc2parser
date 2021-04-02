@@ -1,1 +1,2 @@
 REPLAY_EXT = 'SC2Replay'
+DEFAULT_PARSED_PATH_NAME = 'parsed'

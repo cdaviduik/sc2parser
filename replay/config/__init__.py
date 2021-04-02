@@ -20,6 +20,18 @@ class Config:
     def own_accounts(self):
         return self._get_config('own_accounts')
 
+    @property
+    def poll_interval(self):
+        return self._get_config('poll_interval')
+
+    @property
+    def path_separator(self):
+        return self._get_config('path_separator')
+
+    @property
+    def parsed_replays_path(self):
+        return self._get_config('parsed_replays_path')
+
 
 def load_config(config_path):
     with open(config_path) as config_json:

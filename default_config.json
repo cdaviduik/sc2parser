@@ -1,5 +1,8 @@
 {
   "replays_path": "C:\\Users\\Gaming\\Documents\\StarCraft II\\Accounts\\12345678\\1-S2-1-1234567\\Replays\\Multiplayer",
   "skip_existing": true,
-  "own_accounts": ["FutureNights", "PastDays"]
+  "own_accounts": ["FutureNights", "PastDays"],
+  "path_separator": "\\",
+  "poll_interval": 30,
+  "parsed_replays_path": null
 }

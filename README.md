@@ -23,6 +23,6 @@ The parsed filename is deterministic, so executing it multiple times for the sam
 By specifying account names in `own_accounts` of `config.json` the mmr will not be included for those players in the parsed filename. If you're not sure what to specify for the account name, look at how it is written in a parsed file and use that.
 
 
-#### TODO
-- gitignore config.json
-- support mac vs win slashes
+TODO: Update instructions with new config options
+
+- important you don't include trailing slashes in parsed path

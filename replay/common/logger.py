@@ -1,4 +1,4 @@
-def log(title, data=None):
+def log(title, *args):
     print '\n{}:'.format(title)
-    if data:
-        print data
+    for a in args:
+        print a

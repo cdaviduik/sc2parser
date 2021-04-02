@@ -4,16 +4,14 @@ import shutil
 from replay.common.logger import log
 
 
-def copy_file(src_filepath, dst_filename, skip_existing=True):
+def copy_file(src_filepath, dst_filename, parsed_path, skip_existing=True, path_separator="\\"):
     print "\nsrc_filepath:"
     print src_filepath
 
-    # TODO: configure for mac vs win
-    filepath, _, old_filename = src_filepath.rpartition('\\')
+    filepath, _, old_filename = src_filepath.rpartition(path_separator)
     print "\nfilepath:"
     print filepath
 
-    parsed_path = '{}/parsed'.format(filepath)
     print "\nparsed_path:"
     print parsed_path
     if not os.path.exists(parsed_path):
@@ -28,4 +26,5 @@ def copy_file(src_filepath, dst_filename, skip_existing=True):
         log("skipping existing", dst_filepath)
         return
 
+    log("copying file from src to dst", src_filepath, dst_filepath)
     shutil.copy(src_filepath, dst_filepath)
