@@ -6,7 +6,7 @@ class Config:
         self._config_data = config_data
 
     def _get_config(self, key):
-        return self._config_data[key]
+        return self._config_data.get(key)
 
     @property
     def replays_path(self):
