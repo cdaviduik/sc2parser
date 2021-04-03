@@ -19,7 +19,6 @@ def find_and_parse():
             print "\nSomething went wrong:"
             traceback.print_exc(file=sys.stdout)
 
-        # TODO: customize poll interval
         print "\nChecking again in {} seconds".format(POLL_INTERVAL)
         time.sleep(replay_config.poll_interval)
 

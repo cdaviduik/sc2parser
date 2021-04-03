@@ -3,6 +3,6 @@
   "skip_existing": true,
   "own_accounts": ["FutureNights", "PastDays"],
   "path_separator": "\\",
-  "poll_interval": 30,
+  "poll_interval": 900,
   "parsed_replays_path": null
 }
