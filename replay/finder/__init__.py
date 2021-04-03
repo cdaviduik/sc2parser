@@ -10,8 +10,7 @@ class ReplayFinderError(Exception):
 
 
 def find_replays(path, parsed_path):
-    log('searching for replays in path', path)
-
+    log("searching for replays in path", path)
     for dir_path, dir_names, file_names in os.walk(path):
         log('dir path', dir_path)
 
