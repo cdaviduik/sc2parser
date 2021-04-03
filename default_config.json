@@ -4,5 +4,6 @@
   "own_accounts": ["FutureNights", "PastDays"],
   "path_separator": "\\",
   "poll_interval": 900,
-  "parsed_replays_path": null
+  "parsed_replays_path": null,
+  "enable_caching": true
 }

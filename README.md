@@ -41,6 +41,13 @@ The parsed filename is deterministic, so executing it multiple times for the sam
 ### Own Accounts
 By specifying account names in `own_accounts` of `config.json` the mmr will not be included for those players in the parsed filename. If you're not sure what to specify for the account name, look at how it is written in a parsed file and use that.
 
+### Enable Caching
+When caching is enabled, the script will save the list of previously parsed filenames to avoid parsing them again. This makes everything much faster.
+
+If `skip_existing` is `false`, then the script will reparse any previously parsed/cached files, but will still save the cache whe the run is complete.
+
+If you run into any strange errors around caching you can try deleting the `parsed.cache` inside your `parsed_replays_path`.
+
 ### Poll Interval
 The time in seconds between each execution of the script. Currently set to 900s (15min) by default.
 

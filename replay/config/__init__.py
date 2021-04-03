@@ -32,6 +32,10 @@ class Config:
     def parsed_replays_path(self):
         return self._get_config('parsed_replays_path')
 
+    @property
+    def enable_caching(self):
+        return self._get_config('enable_caching')
+
 
 def load_config(config_path):
     with open(config_path) as config_json:
